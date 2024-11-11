@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Enum representing different themes for the app, each with a raw string value
 enum Theme: String {
     case bubblegum
     case buttercup
@@ -25,15 +26,19 @@ enum Theme: String {
     case teal
     case yellow
 
+    // Property to get the accent color for each theme
     var accentColor: Color {
         switch self {
+        // These themes use black as the accent color
         case .bubblegum, .buttercup, .lavender, .orange, .periwinkle, .poppy, .seafoam, .sky, .tan, .teal, .yellow:
             return .black
+        // These themes use white as the accent color
         case .indigo, .magenta, .navy, .oxblood, .purple:
             return .white
         }
     }
     
+    // Property to get the main color for each theme
     var mainColor: Color {
         switch self {
         case .bubblegum: return Color.pink
@@ -55,6 +60,7 @@ enum Theme: String {
         }
     }
     
+    // Property to get the name of the theme in a capitalized form
     var name: String {
         rawValue.capitalized
     }
